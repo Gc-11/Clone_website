@@ -8,15 +8,27 @@
 // ===============================
 // FULLSCREEN NAV TOGGLE
 // ===============================
-const menu = document.querySelector(".menu");
-const fullscreenNav = document.getElementById("fullscreenNav");
+// FULLSCREEN NAVIGATION
 
-menu.addEventListener("click", function(){
-  if(fullscreenNav.style.transform === "translateY(0%)"){
+const menuBtn = document.querySelector(".menu");
+const fullscreenNav = document.getElementById("fullscreenNav");
+const closeNav = document.getElementById("closeNav");
+
+// OPEN NAV
+menuBtn.addEventListener("click", () => {
+  fullscreenNav.style.transform = "translateY(0)";
+});
+
+// CLOSE NAV (X button)
+closeNav.addEventListener("click", () => {
+  fullscreenNav.style.transform = "translateY(-100%)";
+});
+
+// CLOSE NAV WHEN CLICKING ANY LINK
+document.querySelectorAll("#fullscreenNav a").forEach(link => {
+  link.addEventListener("click", () => {
     fullscreenNav.style.transform = "translateY(-100%)";
-  } else {
-    fullscreenNav.style.transform = "translateY(0%)";
-  }
+  });
 });
 
 // ===============================
