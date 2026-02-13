@@ -351,59 +351,61 @@
 }
 
 
+/* Slider Wrapper */
 .slider {
   position: relative;
   overflow: hidden;
+  background: #e4002b;
+  padding: 60px 20px;
   text-align: center;
 }
 
+/* Slides container */
 .slides {
   display: flex;
   transition: transform 0.5s ease;
-  touch-action: pan-y;
+  width: 300%; /* 3 slides */
 }
 
+/* Each slide */
 .slide {
   min-width: 100%;
-  padding: 60px 20px;
+  flex-shrink: 0;
+  color: white;
 }
 
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  user-select: none;
+}
+
+.arrow.left { left: 20px; }
+.arrow.right { right: 20px; }
+
+/* Dots */
 .dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .dot {
+  display: inline-block;
   width: 10px;
   height: 10px;
-  border: 1px solid #fff;
+  border: 1px solid white;
   border-radius: 50%;
+  margin: 0 5px;
   cursor: pointer;
 }
 
 .dot.active {
-  background: #000;
+  background: black;
 }
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  font-size: 30px;
-  cursor: pointer;
-  user-select: none;
-}
-
-.arrow.left {
-  left: 20px;
-}
-
-.arrow.right {
-  right: 20px;
-}
-
-
     @media (max-width: 768px) {
 
       .stats { grid-template-columns: 1fr; }
@@ -662,6 +664,7 @@ cursor:pointer;
 </body>
 
 </html>
+
 
 
 
