@@ -351,7 +351,56 @@
 }
 
 
+.slider {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
 
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 60px 20px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #000;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.arrow.left {
+  left: 20px;
+}
+
+.arrow.right {
+  right: 20px;
+}
 
 
     @media (max-width: 768px) {
@@ -398,33 +447,52 @@
 
 
 
-<section class="highlight" style="position:relative;">
+<section class="highlight slider">
 
-  <div style="max-width:700px;margin:auto;">
+  <div class="slides">
 
-    <img src="https://cdn.sanity.io/images/kbqq3e0r/production/cfab2fedc7471c56015d4039bc2a48a3b2e07d83-70x70.svg?w=1080&q=100" alt="11 Herbs & Spices" style="width:80px;margin-bottom:20px;" />
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <img src="https://cdn.sanity.io/images/kbqq3e0r/production/cfab2fedc7471c56015d4039bc2a48a3b2e07d83-70x70.svg?w=1080&q=100"
+           style="width:80px;margin-bottom:20px;" />
+      <p>
+        It all started with our chef and expert tastemaker, Colonel Harland Sanders,
+        who went on a relentless mission to crack and create our iconic taste.
+      </p>
+    </div>
 
-    <p style="font-size:18px;font-weight:600;line-height:1.6;">
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="https://cdn.sanity.io/images/kbqq3e0r/production/5dbbff8d5f7e8b4c81e728d9d4c2f636-70x70.svg?w=1080&q=100"
+           style="width:80px;margin-bottom:20px;" />
+      <p>
+        KFC, a subsidiary of Yum! Brands, has been serving craveworthy,
+        finger lickin’ good food since 1952.
+      </p>
+    </div>
 
-      It all started with our chef and expert tastemaker, Colonel Harland Sanders, who went on a relentless mission to crack and create our iconic taste.
-
-    </p>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="https://cdn.sanity.io/images/kbqq3e0r/production/0d61f8370cad1d412f80b84d143e1257-70x70.svg?w=1080&q=100"
+           style="width:80px;margin-bottom:20px;" />
+      <p>
+        Today, we have the widest global footprint of any quick service
+        restaurant brand and are one of the world’s fastest growing retail brands.
+      </p>
+    </div>
 
   </div>
 
-  <div style="display:flex;justify-content:center;gap:10px;margin-top:30px;">
+  <!-- Arrows -->
+  <div class="arrow left">‹</div>
+  <div class="arrow right">›</div>
 
-    <span style="width:10px;height:10px;border:1px solid #fff;border-radius:50%;"></span>
-
-    <span style="width:10px;height:10px;background:#fff;border-radius:50%;"></span>
-
-    <span style="width:10px;height:10px;border:1px solid #fff;border-radius:50%;"></span>
-
+  <!-- Dots -->
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
   </div>
-
-  <div style="position:absolute;left:20px;top:50%;font-size:30px;">‹</div>
-
-  <div style="position:absolute;right:20px;top:50%;font-size:30px;">›</div>
 
 </section>
 
@@ -593,6 +661,7 @@ cursor:pointer;
 </body>
 
 </html>
+
 
 
 
