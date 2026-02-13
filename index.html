@@ -67,6 +67,39 @@
       color: #ffffff;
       text-shadow: 0 2px 14px rgba(0,0,0,0.7);
     }
+    /* Mobile Nav */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #111;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+}
+
+.mobile-nav a {
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.show-nav {
+  display: flex;
+}
+
+.active {
+  background: #e4002b;
+}
+
+/* Light Theme */
+.light-theme {
+  background: white;
+  color: black;
+}
+
+.light-theme .section::after {
+  background: rgba(0,0,0,0.2);
+}
 
     .stat p {
       font-size: 14px;
@@ -275,5 +308,6 @@
 
 </body>
 </html>
+
 
 
