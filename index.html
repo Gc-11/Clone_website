@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KFC Global – Clone</title>
+  <script src="script.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
@@ -184,10 +185,17 @@
 </head>
 <body>
 
-<header>
+<header id="header">
   <img src="logo.svg" alt="KFC" />
-  <div class="menu">☰</div>
+  <div class="menu" id="menuToggle">☰</div>
 </header>
+  
+<nav id="mobileNav" class="mobile-nav">
+  <a href="#hero" class="nav-link">Home</a>
+  <a href="#company" class="nav-link">Company</a>
+  <a href="#impact" class="nav-link">Impact</a>
+  <a href="#careers" class="nav-link">Careers</a>
+</nav>
 
 <section class="hero">
   <div class="stats">
@@ -267,4 +275,5 @@
 
 </body>
 </html>
+
 
