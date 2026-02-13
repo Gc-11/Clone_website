@@ -354,37 +354,41 @@
   position: relative;
   overflow: hidden;
   background: #e4002b;
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
-  height: 320px;              /* IMPORTANT FIX */
-  display: flex;
-  align-items: center;
 }
 
+/* Slides container */
 .slides {
-  display: flex;                /* 3 slides */
+  display: flex;
   transition: transform 0.5s ease;
 }
 
+/* Each slide */
 .slide {
   flex: 0 0 100%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
   color: white;
 }
-.slide p {
-  max-width: 700px;
-  line-height: 1.6;
-}
 
+/* Icon */
 .slide-icon {
   width: 80px;
   margin-bottom: 20px;
 }
 
+/* Paragraph */
+.slide p {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.6;
+}
 /* Arrows */
 .arrow {
   position: absolute;
@@ -479,7 +483,7 @@
 
     <!-- Slide 2 -->
     <div class="slide">
-      <img src="https://via.placeholder.com/70"
+      <img src="l.svg"
            class="slide-icon" />
       <p>
         KFC, a subsidiary of Yum! Brands, has been serving craveworthy,
@@ -489,7 +493,7 @@
 
     <!-- Slide 3 -->
     <div class="slide">
-      <img src="https://via.placeholder.com/70"
+      <img src="w.svg"
            class="slide-icon" />
       <p>
         Today, we have the widest global footprint of any quick service
@@ -675,6 +679,7 @@ cursor:pointer;
 </body>
 
 </html>
+
 
 
 
