@@ -42,7 +42,40 @@ form.addEventListener("submit", function (e) {
   message.textContent = "Form submitted successfully!";
   form.reset();
 });
+// ===============================
+// Footer Accordion Dropdown
+// ===============================
 
+const headers = document.querySelectorAll(".accordion-header");
+
+headers.forEach(header => {
+  header.addEventListener("click", () => {
+
+    const content = header.nextElementSibling;
+    const arrow = header.querySelector(".arrow");
+
+    // Close all other dropdowns
+    headers.forEach(h => {
+      if (h !== header) {
+        h.classList.remove("active");
+        h.nextElementSibling.style.display = "none";
+        h.querySelector(".arrow").classList.remove("rotate");
+      }
+    });
+
+    // Toggle current
+    header.classList.toggle("active");
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      arrow.classList.remove("rotate");
+    } else {
+      content.style.display = "block";
+      arrow.classList.add("rotate");
+    }
+
+  });
+});
 
 // ===============================
 // 3. THEME TOGGLE (DOM MANIPULATION)
