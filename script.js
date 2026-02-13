@@ -147,3 +147,33 @@ dots.forEach((dot, i) => {
     updateSlider();
   });
 });
+// SWIPE SUPPORT FOR MOBILE
+
+let startX = 0;
+let endX = 0;
+
+const slider = document.querySelector(".slides");
+
+slider.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchmove", (e) => {
+  endX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", () => {
+  let diff = startX - endX;
+
+  // Swipe threshold
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) {
+      // Swipe Left → Next Slide
+      index = (index + 1) % slide.length;
+    } else {
+      // Swipe Right → Previous Slide
+      index = (index - 1 + slide.length) % slide.length;
+    }
+    updateSlider();
+  }
+});
