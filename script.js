@@ -78,31 +78,11 @@ document.querySelectorAll(".footer-item").forEach(item => {
 // ===============================
 // LEARN MORE BUTTON CLICK
 // ===============================
-document.querySelectorAll(".section").forEach(section => {
-
-  const button = section.querySelector(".btn");
-  if (!button) return;
-
+document.querySelectorAll(".btn").forEach(button => {
   button.addEventListener("click", function() {
-
-    const title = section.querySelector("h2").innerText;
-
-    if (title.includes("COMPANY")) {
-      window.location.href = "https://global.kfc.com/company";
-    }
-
-    if (title.includes("BRAND IMPACT")) {
-      window.location.href = "https://global.kfc.com/brand-impact";
-    }
-
-    if (title.includes("CAREERS")) {
-      window.location.href = "https://careers.global.kfc.com/";
-    }
-
+    window.location.href = this.dataset.link;
   });
-
 });
-
 // ===============================
 // CONTACT FORM EMAILJS
 // ===============================
