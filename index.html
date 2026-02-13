@@ -1,389 +1,581 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>KFC Global – Clone</title>
-  
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
     body { background: #000; color: #fff; }
 
+
+
     /* HEADER */
+
     header {
+
       position: fixed;
+
       top: 0; left: 0;
+
       width: 100%;
+
       background: #fff;
+
       color: #000;
+
       height: 60px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       padding: 0 20px;
+
       z-index: 1000;
+
     }
+
     header img { height: 28px; }
+
     .menu { font-size: 24px; cursor: pointer; }
 
+
+
     /* HERO */
+
     .hero {
+
       margin-top: 60px;
+
       height: 100vh;
+
       background: url('https://cdn.sanity.io/images/kbqq3e0r/production/e144c901de064e9a4d5115472e51c092cc58e348-2880x1622.jpg?w=1080&q=100') center/cover no-repeat;
+
       position: relative;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
     }
+
+
 
     /* KFC-style overlay */
+
     .hero::after {
+
       content: '';
+
       position: absolute;
+
       inset: 0;
+
       background: linear-gradient(
+
         to bottom,
+
         rgba(0,0,0,0.65),
+
         rgba(0,0,0,0.45)
+
       );
+
     }
+
+
 
     .stats {
+
       position: relative;
+
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 40px;
+
       text-align: center;
+
       color: #fff;
+
       z-index: 1;
+
     }
+
+
 
     /* BRIGHT WHITE TEXT FIX */
+
     .stat h1 {
+
       font-size: 48px;
+
       font-weight: 800;
+
       color: #ffffff;
+
       text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+
     }
-    /* Mobile Nav */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  background: #111;
-  position: absolute;
-  top: 60px;
-  width: 100%;
-}
 
-.mobile-nav a {
-  padding: 15px;
-  color: white;
-  text-decoration: none;
-}
 
-.show-nav {
-  display: flex;
-}
-
-.active {
-  background: #e4002b;
-}
-
-/* Light Theme */
-.light-theme {
-  background: white;
-  color: black;
-}
-
-.light-theme .section::after {
-  background: rgba(0,0,0,0.2);
-}
 
     .stat p {
+
       font-size: 14px;
+
       letter-spacing: 1px;
+
       color: #ffffff;
+
       text-shadow: 0 1px 10px rgba(0,0,0,0.7);
+
     }
+
+
 
     /* RED INFO SLIDE */
+
     .highlight {
+
       background: #e4002b;
+
       padding: 60px 20px;
+
       text-align: center;
+
     }
+
     .highlight p {
+
       max-width: 600px;
+
       margin: auto;
+
       font-size: 14px;
+
       line-height: 1.6;
+
     }
+
+
 
     /* PRODUCT SLIDE */
+
     .product {
+
       min-height: 90vh;
+
       background: #000 url('burger.jpg') right center/contain no-repeat;
+
       padding: 80px 20px;
+
     }
+
     .product h1 { font-size: 42px; margin-bottom: 10px; }
+
     .product h3 { font-size: 18px; margin-bottom: 20px; }
+
     .product p { max-width: 500px; font-size: 14px; line-height: 1.6; }
 
+
+
     /* SECTIONS */
+
     .section {
+
       position: relative;
+
       height: 90vh;
+
       background-size: cover;
+
       background-position: center;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       text-align: center;
+
     }
+
     
+
     .section::after {
+
       content: '';
+
       position: absolute;
+
       inset: 0;
+
       background: rgba(0,0,0,0.6);
+
     }
+
     .section-content {
+
       position: relative;
+
       max-width: 500px;
+
       z-index: 1;
+
     }
+
     .section h2 { font-size: 28px; margin-bottom: 10px; }
+
     .section p { font-size: 14px; margin-bottom: 20px; }
+
     .btn {
+
       background: #e4002b;
+
       border: none;
+
       padding: 12px 24px;
+
       color: #fff;
+
       font-weight: 600;
+
       border-radius: 20px;
+
       cursor: pointer;
+
     }
+
+
 
     /* FOOTER */
+
     footer {
+
       background: #000;
+
       padding: 40px 20px;
+
     }
+
     .footer-item {
+
       border-bottom: 1px solid #ffffff;
+
       padding: 15px 0;
+
       display: flex;
+
       justify-content: space-between;
+
       font-size: 14px;
+
     }
+
     .footer-bottom {
+
       text-align: center;
+
       margin-top: 30px;
+
       font-size: 12px;
+
       color:    #ffffff;
+
     }
+
     .footer-item:hover {
 
+
+
       color: #e4002b;
+
       cursor: pointer;
+
     }
+
+
 
     .kfc-stripes {
+
       background: #000;
+
       display: flex;
+
       justify-content: center;
+
       gap: 14px;
+
     }
 
+
+
 .kfc-stripes span {
+
   width: 30px;
+
   height: 50px;
+
   background: #e4002b;
+
 }
+
+
 
 .fit-image {
+
   background-size: contain !important;
+
   background-position: center;
+
   background-repeat: no-repeat;
-}
-    /* Accordion Footer */
 
-.accordion-item {
-  border-bottom: 1px solid #333;
-  padding: 20px 0;
 }
 
-.accordion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 28px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.accordion-header.active {
-  color: #e4002b;
-}
 
-.accordion-content {
-  display: none;
-  margin-top: 15px;
-}
-
-.accordion-content p {
-  margin: 12px 0;
-  font-size: 18px;
-  color: #ccc;
-}
-
-.arrow {
-  transition: transform 0.3s;
-}
-
-.arrow.rotate {
-  transform: rotate(180deg);
-}
 
 
     @media (max-width: 768px) {
+
       .stats { grid-template-columns: 1fr; }
+
       .product { background-position: center bottom; }
+
     }
+
   </style>
+
 </head>
+
 <body>
 
-<header id="header">
-  <img src="logo.svg" alt="KFC" />
-  <div class="menu" id="menuToggle">☰</div>
-</header>
-  
-<nav id="mobileNav" class="mobile-nav">
-  <a href="#hero" class="nav-link">Home</a>
-  <a href="#company" class="nav-link">Company</a>
-  <a href="#impact" class="nav-link">Impact</a>
-  <a href="#careers" class="nav-link">Careers</a>
-</nav>
 
-<section class="hero" id="hero">
+
+<header>
+
+  <img src="logo.svg" alt="KFC" />
+
+  <div class="menu">☰</div>
+
+</header>
+
+
+
+<section class="hero">
+
   <div class="stats">
+
     <div class="stat"><h1>30K+</h1><p>RESTAURANTS</p></div>
+
     <div class="stat"><h1>1M</h1><p>TEAM MEMBERS</p></div>
+
     <div class="stat"><h1>150</h1><p>COUNTRIES WITH KFC</p></div>
+
     <div class="stat"><h1>3.5</h1><p>HOURS BEFORE NEXT KFC IS BUILT</p></div>
+
   </div>
+
 </section>
+
+
 
 <section class="highlight" style="position:relative;">
+
   <div style="max-width:700px;margin:auto;">
+
     <img src="https://cdn.sanity.io/images/kbqq3e0r/production/cfab2fedc7471c56015d4039bc2a48a3b2e07d83-70x70.svg?w=1080&q=100" alt="11 Herbs & Spices" style="width:80px;margin-bottom:20px;" />
+
     <p style="font-size:18px;font-weight:600;line-height:1.6;">
+
       It all started with our chef and expert tastemaker, Colonel Harland Sanders, who went on a relentless mission to crack and create our iconic taste.
+
     </p>
+
   </div>
+
   <div style="display:flex;justify-content:center;gap:10px;margin-top:30px;">
+
     <span style="width:10px;height:10px;border:1px solid #fff;border-radius:50%;"></span>
+
     <span style="width:10px;height:10px;background:#fff;border-radius:50%;"></span>
+
     <span style="width:10px;height:10px;border:1px solid #fff;border-radius:50%;"></span>
+
   </div>
+
   <div style="position:absolute;left:20px;top:50%;font-size:30px;">‹</div>
+
   <div style="position:absolute;right:20px;top:50%;font-size:30px;">›</div>
+
 </section>
+
+
 
 <section class="section fit-image" style="background-image:url('b.jpg'); background-size: cover; background-position: right center;">
+
   <div class="section-content">
+
     <h2>CHILLI LIME DUNKED BURGER</h2>
+
     <h3>SOUTH AFRICA</h3>
+
     <p>A spicy, tangy burger featuring a Zinger fillet dunked in a Chilli Lime sauce, topped with cheese, fresh Rainbow slaw and Colonel Dressing, served on a Brioche bun.</p>
+
   </div>
+
 </section>
+
+
 
 <section class="section " style="background-image:url('https://cdn.sanity.io/images/kbqq3e0r/production/0a54ef93e0c66380cad116c40a908ac140956012-974x816.jpg?w=1080&q=100')">
+
   <div class="section-content">
+
     <h2>COMPANY</h2>
+
     <p>We’re in the chicken business, but we’re also in the people business.</p>
+
     <button class="btn">Learn More</button>
+
   </div>
+
 </section>
+
+
 
 <section class="section" style="background-image:url('https://cdn.sanity.io/images/kbqq3e0r/production/b8a8ad76969678932a404338e25d6f0936b5dc16-974x816.jpg?w=1080&q=100')">
+
   <div class="section-content">
+
     <h2>BRAND IMPACT</h2>
+
     <p>From kitchens to communities, we’re committed to doing things the right way.</p>
+
     <button class="btn">Learn More</button>
+
   </div>
+
 </section>
+
+
 
 <section class="section" style="background-image:url('https://cdn.sanity.io/images/kbqq3e0r/production/b00be1eaf913cc4b8f724a5763f1c7d7fca4f7ba-974x816.jpg?w=1080&q=100')">
+
   <div class="section-content">
+
     <h2>CAREERS</h2>
+
     <p>Original recipe? Yes. Original careers? We’ve got those, too.</p>
+
     <button class="btn">Learn More</button>
+
   </div>
+
 </section>
 
+
+
 <div class="kfc-stripes">
+
   <span></span>
+
   <span></span>
+
   <span></span>
+
 </div>
+
+
+
 
 
 <footer>
 
-  <div class="accordion-item">
-    <div class="accordion-header">COMPANY <span class="arrow">⌄</span></div>
-    <div class="accordion-content">
-      <p>Our Ambitions</p>
-      <p>Our Leadership</p>
-      <p>Our History</p>
-      <p>Where We Dish It Up</p>
-    </div>
-  </div>
+  <div class="footer-item" >COMPANY <span>⌄</span></div>
 
-  <div class="accordion-item">
-    <div class="accordion-header">BRAND IMPACT <span class="arrow">⌄</span></div>
-    <div class="accordion-content">
-      <p>People & Communities</p>
-      <p>Chicken & Nutrition</p>
-      <p>Suppliers & Climate</p>
-    </div>
-  </div>
+  <div class="footer-item">BRAND IMPACT <span>⌄</span></div>
 
-  <div class="accordion-item">
-    <div class="accordion-header">CAREERS <span class="arrow">⌄</span></div>
-    <div class="accordion-content">
-      <p>Who We Are</p>
-      <p>Working Here</p>
-      <p>Job Search</p>
-    </div>
-  </div>
+  <div class="footer-item">CAREERS <span>⌄</span></div>
 
-  <div class="accordion-item">
-    <div class="accordion-header">NEWSROOM <span class="arrow">⌄</span></div>
-    <div class="accordion-content">
-      <p>Press Releases</p>
-      <p>Blog</p>
-      <p>Media Contacts</p>
-      <p>Brand Assets</p>
-    </div>
-  </div>
+  <div class="footer-item">NEWSROOM <span>⌄</span></div>
+
+
 
   <div class="footer-bottom">
+
     © 2026 Yum! Ltd. All rights reserved.<br/>
-    <u>Privacy Policy</u> | <u>Terms of Use</u> | <u>Sitemap</u>
+
+    <U>Privacy Policy</U> | <U>Terms of Use</U> | <U>Sitemap</U>
+
   </div>
 
 </footer>
+
+
+<!-- FULLSCREEN NAV MENU -->
+<div id="fullscreenNav" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#e4002b;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:25px;
+transform:translateY(-100%);
+transition:0.4s;
+z-index:2000;
+">
+  <a href="#" style="color:white;font-size:36px;text-decoration:none;">COMPANY</a>
+  <a href="#" style="color:white;font-size:36px;text-decoration:none;">BRAND IMPACT</a>
+  <a href="#" style="color:white;font-size:36px;text-decoration:none;">CAREERS</a>
+  <a href="#" style="color:white;font-size:36px;text-decoration:none;">NEWSROOM</a>
+  <a href="#" style="color:white;font-size:36px;text-decoration:none;">SEARCH</a>
+</div>
+
+<!-- CONTACT FORM -->
+<section id="contactSection" style="padding:60px 20px;text-align:center;background:#111;">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required style="padding:10px;margin:10px;width:300px;">
+    <br>
+    <input type="email" name="email" placeholder="Your Email" required style="padding:10px;margin:10px;width:300px;">
+    <br>
+    <textarea name="message" placeholder="Your Message" required style="padding:10px;margin:10px;width:300px;"></textarea>
+    <br>
+    <button type="submit" class="btn">Send Message</button>
+    <p id="formMessage" style="margin-top:10px;"></p>
+  </form>
+</section>
+
+<!-- EmailJS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<!-- External JS -->
 <script src="script.js"></script>
 </body>
+
 </html>
-
-
-
-
 
