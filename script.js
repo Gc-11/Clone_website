@@ -114,3 +114,36 @@ form.addEventListener("submit", function(e){
       message.innerText = "Failed to send message.";
   });
 });
+// HIGHLIGHT SLIDER
+
+const slides = document.querySelector(".slides");
+const slide = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const prev = document.querySelector(".arrow.left");
+const next = document.querySelector(".arrow.right");
+
+let index = 0;
+
+function updateSlider() {
+  slides.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+next.addEventListener("click", () => {
+  index = (index + 1) % slide.length;
+  updateSlider();
+});
+
+prev.addEventListener("click", () => {
+  index = (index - 1 + slide.length) % slide.length;
+  updateSlider();
+});
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    index = i;
+    updateSlider();
+  });
+});
