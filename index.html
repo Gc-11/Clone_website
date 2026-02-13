@@ -208,6 +208,45 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+    /* Accordion Footer */
+
+.accordion-item {
+  border-bottom: 1px solid #333;
+  padding: 20px 0;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.accordion-header.active {
+  color: #e4002b;
+}
+
+.accordion-content {
+  display: none;
+  margin-top: 15px;
+}
+
+.accordion-content p {
+  margin: 12px 0;
+  font-size: 18px;
+  color: #ccc;
+}
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
 
 
     @media (max-width: 768px) {
@@ -295,19 +334,54 @@
 
 
 <footer>
-  <div class="footer-item" >COMPANY <span>⌄</span></div>
-  <div class="footer-item">BRAND IMPACT <span>⌄</span></div>
-  <div class="footer-item">CAREERS <span>⌄</span></div>
-  <div class="footer-item">NEWSROOM <span>⌄</span></div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">COMPANY <span class="arrow">⌄</span></div>
+    <div class="accordion-content">
+      <p>Our Ambitions</p>
+      <p>Our Leadership</p>
+      <p>Our History</p>
+      <p>Where We Dish It Up</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">BRAND IMPACT <span class="arrow">⌄</span></div>
+    <div class="accordion-content">
+      <p>People & Communities</p>
+      <p>Chicken & Nutrition</p>
+      <p>Suppliers & Climate</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">CAREERS <span class="arrow">⌄</span></div>
+    <div class="accordion-content">
+      <p>Who We Are</p>
+      <p>Working Here</p>
+      <p>Job Search</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">NEWSROOM <span class="arrow">⌄</span></div>
+    <div class="accordion-content">
+      <p>Press Releases</p>
+      <p>Blog</p>
+      <p>Media Contacts</p>
+      <p>Brand Assets</p>
+    </div>
+  </div>
 
   <div class="footer-bottom">
     © 2026 Yum! Ltd. All rights reserved.<br/>
-    <U>Privacy Policy</U> | <U>Terms of Use</U> | <U>Sitemap</U>
+    <u>Privacy Policy</u> | <u>Terms of Use</u> | <u>Sitemap</u>
   </div>
-</footer>
 
+</footer>
 </body>
 </html>
+
 
 
 
