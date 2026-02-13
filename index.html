@@ -350,27 +350,42 @@
 
 }
 
-/* Slider Wrapper */
 .slider {
   position: relative;
   overflow: hidden;
   background: #e4002b;
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
+  height: 320px;              /* IMPORTANT FIX */
+  display: flex;
+  align-items: center;
 }
 
-/* Slides container */
 .slides {
   display: flex;
+  width: 300%;                /* 3 slides */
   transition: transform 0.5s ease;
-  width: 300%; /* 3 slides */
 }
 
-/* Each slide */
 .slide {
-  min-width: 100%;
-  flex-shrink: 0;
+  width: 100%;
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: white;
+  padding: 0 20px;
+}
+
+.slide p {
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.slide-icon {
+  width: 80px;
+  margin-bottom: 20px;
 }
 
 /* Arrows */
@@ -379,9 +394,9 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 30px;
-  cursor: pointer;
   color: white;
-  user-select: none;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .arrow.left { left: 20px; }
@@ -389,16 +404,19 @@
 
 /* Dots */
 .dots {
-  margin-top: 30px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .dot {
-  display: inline-block;
-  width: 10px;
   height: 10px;
+  width: 10px;
+  margin: 0 5px;
   border: 1px solid white;
   border-radius: 50%;
-  margin: 0 5px;
+  display: inline-block;
   cursor: pointer;
 }
 
@@ -448,15 +466,14 @@
 </section>
 
 
-
 <section class="highlight slider">
 
   <div class="slides">
 
     <!-- Slide 1 -->
-    <div class="slide active">
+    <div class="slide">
       <img src="https://cdn.sanity.io/images/kbqq3e0r/production/cfab2fedc7471c56015d4039bc2a48a3b2e07d83-70x70.svg?w=1080&q=100"
-           style="width:80px;margin-bottom:20px;" />
+           class="slide-icon" />
       <p>
         It all started with our chef and expert tastemaker, Colonel Harland Sanders,
         who went on a relentless mission to crack and create our iconic taste.
@@ -465,8 +482,8 @@
 
     <!-- Slide 2 -->
     <div class="slide">
-      <img src=""
-           style="width:80px;margin-bottom:20px;" />
+      <img src="https://via.placeholder.com/70"
+           class="slide-icon" />
       <p>
         KFC, a subsidiary of Yum! Brands, has been serving craveworthy,
         finger lickin’ good food since 1952.
@@ -475,8 +492,8 @@
 
     <!-- Slide 3 -->
     <div class="slide">
-      <img src=""
-           style="width:80px;margin-bottom:20px;" />
+      <img src="https://via.placeholder.com/70"
+           class="slide-icon" />
       <p>
         Today, we have the widest global footprint of any quick service
         restaurant brand and are one of the world’s fastest growing retail brands.
@@ -485,11 +502,9 @@
 
   </div>
 
-  <!-- Arrows -->
   <div class="arrow left">‹</div>
   <div class="arrow right">›</div>
 
-  <!-- Dots -->
   <div class="dots">
     <span class="dot active"></span>
     <span class="dot"></span>
@@ -663,6 +678,7 @@ cursor:pointer;
 </body>
 
 </html>
+
 
 
 
